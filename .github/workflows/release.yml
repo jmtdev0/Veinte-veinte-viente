@@ -1,0 +1,63 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version label for the generated archives"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Resolve version label
+        id: version
+        shell: pwsh
+        run: |
+          $resolvedVersion = if ('${{ github.event_name }}' -eq 'workflow_dispatch' -and -not [string]::IsNullOrWhiteSpace('${{ inputs.version }}')) {
+            '${{ inputs.version }}'
+          }
+          else {
+            '${{ github.ref_name }}'
+          }
+
+          if ([string]::IsNullOrWhiteSpace($resolvedVersion)) {
+            $resolvedVersion = 'manual'
+          }
+
+          "value=$resolvedVersion" >> $env:GITHUB_OUTPUT
+
+      - name: Publish self-contained packages
+        shell: pwsh
+        run: .\scripts\Publish-Release.ps1 -Version '${{ steps.version.outputs.value }}'
+
+      - name: Upload workflow artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: TwentyTwentyTray-${{ steps.version.outputs.value }}
+          path: dist/release/${{ steps.version.outputs.value }}/*.zip
+          if-no-files-found: error
+
+      - name: Create GitHub release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/release/${{ steps.version.outputs.value }}/*.zip
+          generate_release_notes: true

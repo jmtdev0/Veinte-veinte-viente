@@ -1,0 +1,15 @@
+bin/
+obj/
+dist/
+Assets/ExtractedPublishedIcon.png
+
+*.user
+*.rsuser
+*.suo
+
+.vs/
+.vscode/
+
+TestResults/
+*.nupkg
+*.snupkg
