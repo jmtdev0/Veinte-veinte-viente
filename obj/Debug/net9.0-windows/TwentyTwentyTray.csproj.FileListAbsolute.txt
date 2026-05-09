@@ -1,0 +1,14 @@
+E:\Software\Coding\Veinte veinte viente\bin\Debug\net9.0-windows\TwentyTwentyTray.exe
+E:\Software\Coding\Veinte veinte viente\bin\Debug\net9.0-windows\TwentyTwentyTray.deps.json
+E:\Software\Coding\Veinte veinte viente\bin\Debug\net9.0-windows\TwentyTwentyTray.runtimeconfig.json
+E:\Software\Coding\Veinte veinte viente\bin\Debug\net9.0-windows\TwentyTwentyTray.dll
+E:\Software\Coding\Veinte veinte viente\bin\Debug\net9.0-windows\TwentyTwentyTray.pdb
+E:\Software\Coding\Veinte veinte viente\obj\Debug\net9.0-windows\TwentyTwentyTray.GeneratedMSBuildEditorConfig.editorconfig
+E:\Software\Coding\Veinte veinte viente\obj\Debug\net9.0-windows\TwentyTwentyTray.AssemblyInfoInputs.cache
+E:\Software\Coding\Veinte veinte viente\obj\Debug\net9.0-windows\TwentyTwentyTray.AssemblyInfo.cs
+E:\Software\Coding\Veinte veinte viente\obj\Debug\net9.0-windows\TwentyTwentyTray.csproj.CoreCompileInputs.cache
+E:\Software\Coding\Veinte veinte viente\obj\Debug\net9.0-windows\TwentyTwentyTray.dll
+E:\Software\Coding\Veinte veinte viente\obj\Debug\net9.0-windows\refint\TwentyTwentyTray.dll
+E:\Software\Coding\Veinte veinte viente\obj\Debug\net9.0-windows\TwentyTwentyTray.pdb
+E:\Software\Coding\Veinte veinte viente\obj\Debug\net9.0-windows\TwentyTwentyTray.genruntimeconfig.cache
+E:\Software\Coding\Veinte veinte viente\obj\Debug\net9.0-windows\ref\TwentyTwentyTray.dll
